@@ -55,6 +55,8 @@ namespace RulesEngine.Actions
             }
         }
 
+        public IDictionary<string, string> GetContext() => _context;
+
         public T GetContext<T>(string name)
         {
             try
