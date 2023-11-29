@@ -10,6 +10,7 @@
 	  <PackageReleaseNotes>https://github.com/microsoft/RulesEngine/blob/main/CHANGELOG.md</PackageReleaseNotes>
 	  <PackageTags>BRE, Rules Engine, Abstraction</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageId>Rules.Engine</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
