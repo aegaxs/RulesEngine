@@ -10,11 +10,13 @@ namespace RulesEngine.Actions
 {
     public class ActionContext
     {
+        private readonly IDictionary<string, object> _originalContext;
         private readonly IDictionary<string, string> _context;
         private readonly RuleResultTree _parentResult;
 
         public ActionContext(IDictionary<string, object> context, RuleResultTree parentResult)
         {
+            _originalContext = context;
             _context = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var kv in context)
             {
@@ -55,7 +57,7 @@ namespace RulesEngine.Actions
             }
         }
 
-        public IDictionary<string, string> GetContext() => _context;
+        public IDictionary<string, object> GetContext() => _originalContext;
 
         public T GetContext<T>(string name)
         {
